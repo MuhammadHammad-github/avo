@@ -1,0 +1,9 @@
+.hero .slick-slide {
+  animation: zoomOut 0.8s ease-in-out;
+  transition: transform 2s ease-in-out;
+}
+
+.hero .slick-active {
+  transform: scale(1);
+  animation: zoomIn 0.8s ease-in-out;
+}

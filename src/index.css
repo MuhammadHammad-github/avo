@@ -13,10 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 h1 {
-  @apply text-[40px];
+  @apply 1000px:text-[40px] 900px:text-4xl text-3xl   font-[900];
 }
 h2 {
-  @apply text-4xl;
+  @apply text-4xl font-[900] text-semiTransparentBlack;
 }
 h3 {
   @apply text-3xl;
@@ -31,7 +31,7 @@ h6 {
   @apply text-lg;
 }
 p {
-  @apply leading-[1.8];
+  @apply leading-[1.8] text-desaturatedBlue;
 }
 .transitional {
   @apply transition-all duration-300 ease-in-out;
@@ -39,7 +39,7 @@ p {
 .transitional:hover {
   @apply transition-all duration-300 ease-in-out;
 }
-.clipPathHero {
+.homeHero {
   clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 92%, 58% 100%, 0 88%);
 }
 @keyframes zoomIn {
@@ -62,14 +62,132 @@ p {
     opacity: 0;
   }
 }
-
-.slick-slide {
-  /* transform: scale(0.9); */
-  animation: zoomOut 0.8s ease-in-out;
-  transition: transform 2s ease-in-out;
+.customDots .slick-active .myDot {
+  @apply bg-crimson outline-crimson;
+}
+.customDots .slick-dots li button::before {
+  opacity: 0 !important;
+}
+.clipPathFooter {
+  clip-path: polygon(0 0, 63% 8%, 100% 0, 100% 100%, 0 100%, 0% 50%);
+}
+.homeHero1 {
+  background-image: url("/images/tunnel1.jpg");
+  background-size: cover;
+}
+.homeHero2 {
+  background-image: url("/images/tunnel2.jpg");
+  background-size: cover;
+}
+.btn {
+  @apply bg-crimson px-6 py-4 text-sm text-white rounded;
+}
+.playBtn {
+  @apply relative;
+}
+.playBtn::before {
+  content: "";
+  @apply rounded-full scale-100 opacity-0 bg-crimson absolute top-0 left-0;
+  width: 100%;
+  height: 100%;
+  animation-name: PlayBtnAnim;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+@keyframes PlayBtnAnim {
+  0% {
+    @apply opacity-0;
+  }
+  25% {
+    @apply opacity-25;
+  }
+  50% {
+    @apply scale-150 opacity-20;
+  }
+  75% {
+    @apply scale-150 opacity-10;
+  }
+  100% {
+    @apply scale-150 opacity-0;
+  }
+}
+/* VideoLightbox.css */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.slick-active {
-  transform: scale(1);
-  animation: zoomIn 0.8s ease-in-out;
+.lightbox-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  /* max-width: 900px; */
+  /* max-height: 80%; */
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+.respPx20 {
+  @apply 800px:px-20 600px:px-10 px-5;
+}
+.clipPathWorks {
+  clip-path: polygon(41% 0, 100% 3%, 100% 96%, 60% 100%, 0 96%, 0 4%);
+}
+.cta {
+  background-image: url("/images/tunnel1.jpg");
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.clipPathBlogs {
+  clip-path: polygon(42% 0, 100% 5%, 100% 100%, 0 100%, 0 5%);
+}
+.clipPathHero {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 92%, 58% 100%, 0 88%);
+}
+.parallax {
+  background-image: url("/images/tunnel1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* .content {
+      height: 100vh;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+    } */

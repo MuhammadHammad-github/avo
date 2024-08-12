@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const useGetScrollPos = () => {
   const [scrollPos, setScrollPos] = useState(0);
